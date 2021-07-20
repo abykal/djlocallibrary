@@ -6,9 +6,18 @@
   <h2>Dynamic content</h2>
   <p>The library has the following record counts:</p>
   <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <button type="button" class="btn btn-primary">
+      Books <span class="badge badge-light">{{ num_books }}</span>
+    </button>
+    <button type="button" class="btn btn-success">
+      Copies <span class="badge badge-light">{{ num_instances }}</span>
+    </button>
+    <button type="button" class="btn btn-info">
+      Copies Available <span class="badge badge-light">{{ num_instances_available }}</span>
+    </button>
+    <button type="button" class="btn btn-danger">
+      Authors <span class="badge badge-light">{{ num_authors }}</span>
+    </button>
+
   </ul>
 {% endblock %}

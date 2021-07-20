@@ -1,0 +1,24 @@
+{% extends 'base_generic.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>Authors</h1>
+  {% if author_list%}
+  <ul class="list-unstyled">
+    {% for author in author_list %}
+    <li class="mt-5">
+      <div class="card bg-success text-white" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ author.last_name }}, {{ author.first_name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Born on {{author.date_of_birth|timesince}}</h6>
+          <a href="{{ author.get_absolute_url }}" class="card-link">Details</a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no authors added in the library.</p>
+  {% endif %}
+{% endblock %}
